@@ -10,9 +10,8 @@
  "document_type": "Master", 
  "fields": [
   {
-   "fieldname": "tenent_details", 
+   "fieldname": "section_break_1", 
    "fieldtype": "Section Break", 
-   "label": "Tenent Details", 
    "permlevel": 0, 
    "precision": ""
   }, 
@@ -25,6 +24,28 @@
    "reqd": 1
   }, 
   {
+   "fieldname": "column_break_2", 
+   "fieldtype": "Column Break", 
+   "permlevel": 0, 
+   "precision": ""
+  }, 
+  {
+   "fieldname": "select_owner", 
+   "fieldtype": "Link", 
+   "label": "Select Owner", 
+   "options": "Add Owner", 
+   "permlevel": 0, 
+   "precision": "", 
+   "reqd": 1
+  }, 
+  {
+   "fieldname": "tenent_details", 
+   "fieldtype": "Section Break", 
+   "label": "Tenent Details", 
+   "permlevel": 0, 
+   "precision": ""
+  }, 
+  {
    "allow_on_submit": 0, 
    "fieldname": "tenent_name", 
    "fieldtype": "Data", 
@@ -34,6 +55,26 @@
    "in_list_view": 1, 
    "label": "Tenent Name", 
    "no_copy": 0, 
+   "permlevel": 0, 
+   "precision": "", 
+   "print_hide": 0, 
+   "read_only": 0, 
+   "report_hide": 0, 
+   "reqd": 1, 
+   "search_index": 0, 
+   "set_only_once": 0
+  }, 
+  {
+   "allow_on_submit": 0, 
+   "fieldname": "gender", 
+   "fieldtype": "Select", 
+   "hidden": 0, 
+   "ignore_user_permissions": 0, 
+   "in_filter": 0, 
+   "in_list_view": 0, 
+   "label": "Gender", 
+   "no_copy": 0, 
+   "options": "\nMale\nFemale", 
    "permlevel": 0, 
    "precision": "", 
    "print_hide": 0, 
@@ -105,26 +146,6 @@
    "fieldtype": "Column Break", 
    "permlevel": 0, 
    "precision": ""
-  }, 
-  {
-   "allow_on_submit": 0, 
-   "fieldname": "gender", 
-   "fieldtype": "Select", 
-   "hidden": 0, 
-   "ignore_user_permissions": 0, 
-   "in_filter": 0, 
-   "in_list_view": 0, 
-   "label": "Gender", 
-   "no_copy": 0, 
-   "options": "\nMale\nFemale", 
-   "permlevel": 0, 
-   "precision": "", 
-   "print_hide": 0, 
-   "read_only": 0, 
-   "report_hide": 0, 
-   "reqd": 1, 
-   "search_index": 0, 
-   "set_only_once": 0
   }, 
   {
    "fieldname": "blood_group", 
@@ -240,41 +261,32 @@
    "precision": ""
   }, 
   {
-   "fieldname": "lane_no", 
-   "fieldtype": "Link", 
-   "label": "Lane No", 
-   "options": "Add Lane", 
+   "fieldname": "lane_name", 
+   "fieldtype": "Read Only", 
+   "label": "Wing Name", 
+   "options": "select_owner.lane_name", 
    "permlevel": 0, 
-   "precision": "", 
-   "reqd": 1
+   "precision": ""
   }, 
   {
    "allow_on_submit": 0, 
-   "fieldname": "house_type", 
-   "fieldtype": "Link", 
+   "fieldname": "house_t", 
+   "fieldtype": "Read Only", 
    "hidden": 0, 
    "ignore_user_permissions": 0, 
    "in_filter": 0, 
-   "in_list_view": 1, 
+   "in_list_view": 0, 
    "label": "House Type", 
    "no_copy": 0, 
-   "options": "Add House Type", 
+   "options": "select_owner.house_type", 
    "permlevel": 0, 
    "precision": "", 
    "print_hide": 0, 
    "read_only": 0, 
    "report_hide": 0, 
-   "reqd": 1, 
+   "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0
-  }, 
-  {
-   "fieldname": "house_no", 
-   "fieldtype": "Data", 
-   "label": "House No", 
-   "permlevel": 0, 
-   "precision": "", 
-   "reqd": 1
   }, 
   {
    "allow_on_submit": 0, 
@@ -295,37 +307,18 @@
    "set_only_once": 0
   }, 
   {
-   "fieldname": "lane_name", 
+   "fieldname": "house_no", 
    "fieldtype": "Read Only", 
-   "label": "Lane Name", 
-   "options": "lane_no.lane_name", 
-   "permlevel": 0, 
-   "precision": ""
-  }, 
-  {
-   "allow_on_submit": 0, 
-   "fieldname": "house_t", 
-   "fieldtype": "Read Only", 
-   "hidden": 0, 
-   "ignore_user_permissions": 0, 
-   "in_filter": 0, 
-   "in_list_view": 0, 
-   "label": "House Type", 
-   "no_copy": 0, 
-   "options": "house_type.house_type", 
+   "label": "House No", 
+   "options": "select_owner.house_no", 
    "permlevel": 0, 
    "precision": "", 
-   "print_hide": 0, 
-   "read_only": 0, 
-   "report_hide": 0, 
-   "reqd": 0, 
-   "search_index": 0, 
-   "set_only_once": 0
+   "reqd": 0
   }, 
   {
    "fieldname": "vehicles_and_watertank_information", 
    "fieldtype": "Section Break", 
-   "label": "Vehicles and WaterTank Information", 
+   "label": "Vehicles Information", 
    "permlevel": 0, 
    "precision": ""
   }, 
@@ -339,7 +332,7 @@
    "reqd": 1
   }, 
   {
-   "description": "Enter Vehicle nos seperated by commas.", 
+   "description": "Enter Four Wheeler Vehicle information.", 
    "fieldname": "four_wheeler", 
    "fieldtype": "Table", 
    "label": "Four Wheeler Vehicle Nos", 
@@ -348,11 +341,27 @@
    "precision": ""
   }, 
   {
-   "description": "Enter Vehicle nos seperated by commas.", 
+   "description": "Enter Two Wheeler Vehicle information.", 
    "fieldname": "two_wheeler", 
    "fieldtype": "Table", 
    "label": "Two Wheeler Vehicle Nos", 
    "options": "Vehicle Details", 
+   "permlevel": 0, 
+   "precision": ""
+  }, 
+  {
+   "fieldname": "watertank_details", 
+   "fieldtype": "Section Break", 
+   "label": "WaterTank Details", 
+   "permlevel": 0, 
+   "precision": ""
+  }, 
+  {
+   "description": "In Ltrs", 
+   "fieldname": "watertank_underg", 
+   "fieldtype": "Select", 
+   "label": "Water Tank (Underground)", 
+   "options": "\n1500 Ltr\n1000 Ltrs\n500 Ltrs\n0 Ltrs", 
    "permlevel": 0, 
    "precision": ""
   }, 
@@ -364,19 +373,10 @@
   }, 
   {
    "description": "In Ltrs", 
-   "fieldname": "watertank_underg", 
-   "fieldtype": "Select", 
-   "label": "Water Tank (Underground)", 
-   "options": "\n\n1500 Ltr\n1000 Ltrs\n500 Ltrs\n0 Ltrs", 
-   "permlevel": 0, 
-   "precision": ""
-  }, 
-  {
-   "description": "In Ltrs", 
    "fieldname": "watertank_overhead", 
    "fieldtype": "Select", 
    "label": "Water Tank (Overhead)", 
-   "options": "\n\n1500 Ltr\n1000 Ltrs\n500 Ltrs\n0 Ltrs", 
+   "options": "\n1500 Ltr\n1000 Ltrs\n500 Ltrs\n0 Ltrs", 
    "permlevel": 0, 
    "precision": ""
   }, 
@@ -404,7 +404,7 @@
  "is_submittable": 0, 
  "issingle": 0, 
  "istable": 0, 
- "modified": "2015-06-03 11:42:08.822530", 
+ "modified": "2015-08-11 09:51:40.297859", 
  "modified_by": "Administrator", 
  "module": "Society Master", 
  "name": "Add Tenent", 

@@ -83,7 +83,7 @@ cur_frm.cscript.child_dob=function(doc,cdt,cdn)
     refresh_field('family_details')
 }
 
-cur_frm.cscript.house_no=function(doc,cdt,cdn)
+/*cur_frm.cscript.house_no=function(doc,cdt,cdn)
 {
     var l=doc.house_no;
     var w=doc.lane_no;
@@ -104,4 +104,4 @@ cur_frm.cscript.house_no=function(doc,cdt,cdn)
            }
         }
     })
-}
+}*/

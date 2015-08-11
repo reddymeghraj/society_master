@@ -27,7 +27,8 @@ def check_house(l,w,h):
 		frappe.msgprint("Selected house is already allocated")
 		return(q)
 	else:
-		q1=frappe.db.sql("""select house_no from `tabAdd Tenent` where house_no=%s and lane_no=%s and house_type=%s""",(l,w,h))
-		if q1:
-			frappe.msgprint("Selected house is already allocated")
-			return (q1)
+		return 0
+		#q1=frappe.db.sql("""select house_no from `tabAdd Tenent` where house_no=%s and lane_no=%s and house_type=%s""",(l,w,h))
+		#if q1:
+		#	frappe.msgprint("Selected house is already allocated")
+		#	return (q1)
