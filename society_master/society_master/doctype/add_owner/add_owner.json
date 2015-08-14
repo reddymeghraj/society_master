@@ -7,7 +7,7 @@
  "custom": 0, 
  "docstatus": 0, 
  "doctype": "DocType", 
- "document_type": "Master", 
+ "document_type": "Transaction", 
  "fields": [
   {
    "fieldname": "date", 
@@ -112,7 +112,7 @@
   }, 
   {
    "fieldname": "age", 
-   "fieldtype": "Int", 
+   "fieldtype": "Read Only", 
    "label": "Age", 
    "permlevel": 0, 
    "precision": "", 
@@ -168,6 +168,7 @@
    "options": "Add Wing", 
    "permlevel": 0, 
    "precision": "", 
+   "print_hide": 1, 
    "reqd": 1
   }, 
   {
@@ -177,13 +178,13 @@
    "hidden": 0, 
    "ignore_user_permissions": 0, 
    "in_filter": 0, 
-   "in_list_view": 1, 
+   "in_list_view": 0, 
    "label": "Select House Type", 
    "no_copy": 0, 
    "options": "Add House Type", 
    "permlevel": 0, 
    "precision": "", 
-   "print_hide": 0, 
+   "print_hide": 1, 
    "read_only": 0, 
    "report_hide": 0, 
    "reqd": 1, 
@@ -194,10 +195,12 @@
    "description": "Enter House no.", 
    "fieldname": "house_no", 
    "fieldtype": "Data", 
+   "in_list_view": 1, 
    "label": "House No", 
    "permlevel": 0, 
    "precision": "", 
-   "reqd": 1
+   "reqd": 1, 
+   "search_index": 1
   }, 
   {
    "fieldname": "column_break1", 
@@ -208,19 +211,23 @@
   {
    "fieldname": "lane_name", 
    "fieldtype": "Read Only", 
+   "in_list_view": 1, 
    "label": "Wing Name", 
    "options": "select_lane.lane_name", 
    "permlevel": 0, 
-   "precision": ""
+   "precision": "", 
+   "search_index": 1
   }, 
   {
    "fieldname": "house_type", 
    "fieldtype": "Read Only", 
+   "in_list_view": 1, 
    "label": "House Type", 
    "options": "select_htype.house_type", 
    "permlevel": 0, 
    "precision": "", 
-   "reqd": 0
+   "reqd": 0, 
+   "search_index": 1
   }, 
   {
    "fieldname": "vehicles_and_water_tank", 
@@ -303,6 +310,16 @@
    "options": "Add FamilyMember", 
    "permlevel": 0, 
    "precision": ""
+  }, 
+  {
+   "fieldname": "amended_from", 
+   "fieldtype": "Link", 
+   "label": "Amended From", 
+   "no_copy": 1, 
+   "options": "Add Owner", 
+   "permlevel": 0, 
+   "print_hide": 1, 
+   "read_only": 1
   }
  ], 
  "hide_heading": 0, 
@@ -310,10 +327,10 @@
  "icon": "icon-male", 
  "in_create": 0, 
  "in_dialog": 0, 
- "is_submittable": 0, 
+ "is_submittable": 1, 
  "issingle": 0, 
  "istable": 0, 
- "modified": "2015-08-11 09:47:34.406938", 
+ "modified": "2015-08-13 14:40:01.418075", 
  "modified_by": "Administrator", 
  "module": "Society Master", 
  "name": "Add Owner", 
@@ -323,10 +340,10 @@
   {
    "amend": 0, 
    "apply_user_permissions": 0, 
-   "cancel": 0, 
+   "cancel": 1, 
    "create": 1, 
    "delete": 1, 
-   "email": 0, 
+   "email": 1, 
    "export": 1, 
    "import": 0, 
    "permlevel": 0, 
@@ -335,15 +352,19 @@
    "report": 1, 
    "role": "Society Head", 
    "set_user_permissions": 0, 
-   "submit": 0, 
+   "submit": 1, 
    "write": 1
   }, 
   {
+   "cancel": 1, 
    "create": 1, 
    "delete": 1, 
+   "email": 1, 
    "permlevel": 0, 
+   "print": 1, 
    "read": 1, 
    "role": "Administrator", 
+   "submit": 1, 
    "write": 1
   }
  ], 
